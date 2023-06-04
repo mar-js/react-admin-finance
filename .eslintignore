@@ -1,0 +1,6 @@
+**/*.min.js
+**/dist/
+
+vite.config.ts
+tailwind.config.js
+postcss.config.js
