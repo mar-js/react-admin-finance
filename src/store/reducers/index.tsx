@@ -1,1 +1,1 @@
-export { transactions } from './transactions'
+export { transactionsReducer } from './transactions'
