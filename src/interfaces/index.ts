@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-export enum EnumTransactionsReduce {
+export enum EnumTransactionsReducer {
   ADD_TRANSACTION = 'ADD_TRANSACTION'
 }
 
