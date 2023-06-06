@@ -1,7 +1,7 @@
 import { ADD_TRANSACTION } from 'store/types'
-import { IGlobalStateModel, TTransactionsReducer } from 'interfaces'
+import { EnumTransactionsReducer } from 'interfaces'
 
-export const transactionsReducer = (state: TTransactionsReducer, action: IGlobalStateModel) => {
+export const transactionsReducer = (state: EnumTransactionsReducer, action: any) => {
   if (state === ADD_TRANSACTION) return state
 
   return state
