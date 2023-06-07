@@ -5,7 +5,7 @@ export const transactionsReducer = (state: ITransactionsReducerState, action: IT
   if (action.type === ADD_TRANSACTION) {
     return {
       ...state,
-      transactions: [ action.payload ]
+      transactions: [ ...state.transactions, action.payload ]
     }
   }
 
