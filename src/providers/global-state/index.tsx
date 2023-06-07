@@ -6,9 +6,14 @@ import { INITIAL_STATE } from 'constants'
 export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [ { transactions }, dispatch ] = useReducer(transactionsReducer, INITIAL_STATE)
 
-  const VALUE = { transactions }
+  const VALUE = {
+    transactions,
+    dispatch
+  }
 
-  return (<GlobalStateModel.Provider value={ VALUE }>
-    { children }
-  </GlobalStateModel.Provider>)
+  return (
+    <GlobalStateModel.Provider value={ VALUE }>
+      { children }
+    </GlobalStateModel.Provider>
+  )
 }
