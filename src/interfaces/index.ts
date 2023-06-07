@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-export enum EnumTransactionsReducerType {
-  ADD_TRANSACTION = 'ADD_TRANSACTION'
-}
+export type TTransactionsReducerType = 'ADD_TRANSACTION'
 
 export interface ITransactionsReducerAction {
-  type: EnumTransactionsReducerType;
+  type: TTransactionsReducerType;
   payload: ITransaction;
 }
 
@@ -15,6 +13,7 @@ export interface ITransactionsReducerState {
 
 export interface IGlobalStateModel {
   transactions: [] | ITransaction[];
+  dispatch: React.Dispatch<ITransactionsReducerAction>;
 }
 
 export interface ITransaction {
