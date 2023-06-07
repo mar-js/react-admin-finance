@@ -1,20 +1,23 @@
 /* eslint-disable no-unused-vars */
 
-export enum EnumTransactionsReducerState {
+export enum EnumTransactionsReducerType {
   ADD_TRANSACTION = 'ADD_TRANSACTION'
 }
 
 export interface ITransactionsReducerAction {
-  type: EnumTransactionsReducerState;
-  payload: IFormAddTransaction;
+  type: EnumTransactionsReducerType;
+  payload: ITransaction;
+}
+
+export interface ITransactionsReducerState {
+  transactions: ITransaction[];
 }
 
 export interface IGlobalStateModel {
-  transactions: []
+  transactions: [] | ITransaction[];
 }
 
-export interface IFormAddTransaction {
-  id: number;
-  title: string;
+export interface ITransaction {
   description: string;
+  amoung: string;
 }
