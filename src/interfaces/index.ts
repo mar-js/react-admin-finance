@@ -18,5 +18,5 @@ export interface IGlobalStateModel {
 
 export interface ITransaction {
   description: string;
-  amoung: string;
+  amount: string;
 }
