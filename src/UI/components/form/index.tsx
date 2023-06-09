@@ -1,6 +1,7 @@
 import { FormEvent } from 'react'
 import { useGlobalState } from 'contexts'
 import { ADD_TRANSACTION } from 'store/types'
+import { generatorId } from 'helpers'
 import { ITransaction } from 'interfaces'
 
 export const Form: React.FC = () => {
@@ -16,6 +17,7 @@ export const Form: React.FC = () => {
     dispatch({
       type: ADD_TRANSACTION,
       payload: {
+        id: generatorId(),
         description,
         amount
       }
