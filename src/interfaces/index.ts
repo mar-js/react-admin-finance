@@ -8,7 +8,7 @@ export interface ITransactionsReducerAction {
 }
 
 export interface ITransactionsReducerState {
-  transactions: ITransaction[];
+  transactions: [] | ITransaction[];
 }
 
 export interface IGlobalStateModel {
