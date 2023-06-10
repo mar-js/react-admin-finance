@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-export type TTransactionsReducerType = 'ADD_TRANSACTION'
+export type TTransactionsReducerType = 'ADD_TRANSACTION' | 'DELETE_TRANSACTION'
 
 export interface ITransactionsReducerAction {
   type: TTransactionsReducerType;
