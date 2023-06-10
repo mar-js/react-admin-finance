@@ -1,4 +1,4 @@
-import { ADD_TRANSACTION } from 'store/types'
+import { ADD_TRANSACTION, DELETE_TRANSACTION } from 'store/types'
 import { ITransactionsReducerState, ITransactionsReducerAction } from 'interfaces'
 
 export const transactionsReducer = (state: ITransactionsReducerState, action: ITransactionsReducerAction) => {
@@ -6,6 +6,13 @@ export const transactionsReducer = (state: ITransactionsReducerState, action: IT
     return {
       ...state,
       transactions: [ ...state.transactions, action.payload ]
+    }
+  }
+
+  if (action.type === DELETE_TRANSACTION) {
+    return {
+      ...state,
+      transactions: [ ...state.transactions.filter(transaction => transaction.id !== action.payload.id) ]
     }
   }
 
