@@ -1,11 +1,10 @@
 import { FormEvent } from 'react'
 import { useGlobalState } from 'contexts'
-import { ADD_TRANSACTION } from 'store/types'
 import { generatorId } from 'helpers'
 import { ITransaction } from 'interfaces'
 
 export const Form: React.FC = () => {
-  const { dispatch } = useGlobalState()
+  const { addTransaction } = useGlobalState()
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -14,13 +13,10 @@ export const Form: React.FC = () => {
     const DATA = Object.fromEntries(new FormData(TARGET))
     const { description, amount } = DATA as unknown as ITransaction
 
-    dispatch({
-      type: ADD_TRANSACTION,
-      payload: {
-        id: generatorId(),
-        description,
-        amount
-      }
+    addTransaction({
+      id: generatorId(),
+      description,
+      amount
     })
   }
 
