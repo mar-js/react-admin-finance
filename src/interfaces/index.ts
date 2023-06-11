@@ -16,6 +16,7 @@ export interface IGlobalStateModel {
   dispatch: React.Dispatch<ITransactionsReducerAction>;
   addTransaction: (transaction: ITransaction) => void;
   deleteTransaction: (transaction: ITransaction) => void;
+  TOTAL: string;
 }
 
 export interface ITransaction {
