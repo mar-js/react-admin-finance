@@ -7,6 +7,7 @@ import { ITransaction } from 'interfaces'
 
 export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [ { transactions }, dispatch ] = useReducer(transactionsReducer, INITIAL_STATE)
+  const CONDITION_TRANSACTIONS = transactions.length > 0
 
   const addTransaction = (transaction: ITransaction) => {
     dispatch({
@@ -22,7 +23,7 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
     })
   }
 
-  const TOTAL = transactions.length > 0 && transactions.map(transaction => Number(transaction.amount))
+  const TOTAL = CONDITION_TRANSACTIONS && transactions.map(transaction => Number(transaction.amount))
     .reduce((acc, item) => acc += item, 0) || 0
 
   const VALUE = {
