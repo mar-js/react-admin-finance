@@ -23,7 +23,7 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
   }
 
   const TOTAL = transactions.length > 0 && transactions.map(transaction => Number(transaction.amount))
-    .reduce((acc, item) => acc += item, 0)
+    .reduce((acc, item) => acc += item, 0) || 0
 
   const VALUE = {
     transactions,
