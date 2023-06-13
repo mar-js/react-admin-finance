@@ -22,13 +22,15 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
     })
   }
 
+  const handlerReduce = (acc: number, item: number) => acc += item
+
   const MOUNTS = transactions.map(transaction => Number(transaction.amount)) || 0
 
-  const TOTAL = MOUNTS.reduce((acc, item) => acc += item, 0) || 0
+  const TOTAL = MOUNTS.reduce(handlerReduce, 0) || 0
 
-  const INCOME = MOUNTS.filter(mount => mount > 0).reduce((acc, item) => acc += item) || 0
+  const INCOME = MOUNTS.filter(mount => mount > 0).reduce(handlerReduce, 0) || 0
 
-  const EXPENSE = MOUNTS.filter(mount => mount < 0).reduce((acc, item) => acc += item) || 0
+  const EXPENSE = MOUNTS.filter(mount => mount < 0).reduce(handlerReduce, 0) || 0
 
   const VALUE = {
     transactions,
