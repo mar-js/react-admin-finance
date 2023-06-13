@@ -28,13 +28,16 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
 
   const INCOME = MOUNTS.filter(mount => mount > 0).reduce((acc, item) => acc += item) || 0
 
+  const EXPENSE = MOUNTS.filter(mount => mount < 0).reduce((acc, item) => acc += item) || 0
+
   const VALUE = {
     transactions,
     dispatch,
     addTransaction,
     deleteTransaction,
     TOTAL,
-    INCOME
+    INCOME,
+    EXPENSE
   }
 
   return (
