@@ -18,6 +18,7 @@ export interface IGlobalStateModel {
   deleteTransaction: (transaction: ITransaction) => void;
   TOTAL: number;
   INCOME: number;
+  EXPENSE: number;
 }
 
 export interface ITransaction {
