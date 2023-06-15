@@ -3,10 +3,11 @@ import { GlobalStateModel } from 'contexts'
 import { transactionsReducer } from 'store/reducers'
 import { INITIAL_STATE } from 'constants'
 import { ADD_TRANSACTION, DELETE_TRANSACTION } from 'store/types'
+import { localStorageData } from 'helpers'
 import { ITransaction } from 'interfaces'
 
 export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [ { transactions }, dispatch ] = useReducer(transactionsReducer, INITIAL_STATE)
+  const [ { transactions }, dispatch ] = useReducer(transactionsReducer, INITIAL_STATE, localStorageData)
 
   const addTransaction = (transaction: ITransaction) => {
     dispatch({
