@@ -1,4 +1,8 @@
-import { PropsWithChildren, useReducer } from 'react'
+import {
+  PropsWithChildren,
+  useEffect,
+  useReducer
+} from 'react'
 import { GlobalStateModel } from 'contexts'
 import { transactionsReducer } from 'store/reducers'
 import { INITIAL_STATE } from 'constants'
@@ -32,6 +36,10 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
   const INCOME = MOUNTS.filter(mount => mount > 0).reduce(handlerReduce, 0) || 0
 
   const EXPENSE = MOUNTS.filter(mount => mount < 0).reduce(handlerReduce, 0) || 0
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(transactions))
+  }, [ transactions ])
 
   const VALUE = {
     transactions,
