@@ -21,10 +21,10 @@ export const Form: React.FC = () => {
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <input type="text" name="description" />
-      <input type="number" step="0.1" name="amount" />
-      <button type="submit">Add transaction</button>
+    <form onSubmit={ handleSubmit } className="w-full">
+      <input className="bg-lime-800 px-2 text-white" type="text" name="description" />
+      <input className="bg-lime-800 px-2 text-white" type="number" step="0.1" name="amount" />
+      <button className="w-full bg-lime-600 text-white font-bold py-3" type="submit">Add transaction</button>
     </form>
   )
 }
