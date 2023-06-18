@@ -1,3 +1,15 @@
+import {
+  Balance,
+  Flow,
+  Form,
+  Transactions
+} from 'UI/components'
+
 export const App: React.FC = () => (
-  <div>Hello Word</div>
+  <>
+    <Form />
+    <Transactions />
+    <Balance />
+    <Flow />
+  </>
 )
