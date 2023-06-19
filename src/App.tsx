@@ -1,3 +1,4 @@
+import { Header } from 'UI/layouts'
 import {
   Balance,
   Flow,
@@ -7,6 +8,8 @@ import {
 
 export const App: React.FC = () => (
   <>
+    <Header>...</Header>
+
     <Form />
     <Transactions />
     <Balance />
