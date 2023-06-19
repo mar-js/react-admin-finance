@@ -3,12 +3,15 @@ import {
   Balance,
   Flow,
   Form,
+  Title,
   Transactions
 } from 'UI/components'
 
 export const App: React.FC = () => (
   <>
-    <Header>...</Header>
+    <Header>
+      <Title />
+    </Header>
 
     <Form />
     <Transactions />
