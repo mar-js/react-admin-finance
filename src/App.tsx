@@ -12,10 +12,11 @@ export const App: React.FC = () => (
     <Header>
       <Title />
     </Header>
-    <Navigation>...</Navigation>
+    <Navigation>
+      <Flow />
+    </Navigation>
     <Form />
     <Transactions />
     <Balance />
-    <Flow />
   </>
 )
