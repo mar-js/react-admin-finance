@@ -1,4 +1,8 @@
-import { Header, Navigation } from 'UI/layouts'
+import {
+  Container,
+  Header,
+  Navigation
+} from 'UI/layouts'
 import {
   Balance,
   Flow,
@@ -8,7 +12,7 @@ import {
 } from 'UI/components'
 
 export const App: React.FC = () => (
-  <>
+  <Container>
     <Header>
       <Title />
     </Header>
@@ -18,5 +22,5 @@ export const App: React.FC = () => (
     <Form />
     <Transactions />
     <Balance />
-  </>
+  </Container>
 )
