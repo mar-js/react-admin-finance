@@ -13,17 +13,14 @@ import {
 
 export const App: React.FC = () => (
   <Container>
-    <div>
-      <Header>
-        <Title />
-      </Header>
-      <Navigation>
-        <Flow />
-      </Navigation>
-      <Form />
-      <Transactions />
-      <Balance />
-    </div>
-    <div className="p-[300px]" />
+    <Header>
+      <Title />
+    </Header>
+    <Navigation>
+      <Flow />
+    </Navigation>
+    <Form />
+    <Transactions />
+    <Balance />
   </Container>
 )
