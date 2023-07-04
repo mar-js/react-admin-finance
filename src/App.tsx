@@ -5,6 +5,7 @@ import {
 } from 'UI/layouts'
 import {
   Balance,
+  ExpenseChart,
   Flow,
   Form,
   Title,
@@ -22,5 +23,6 @@ export const App: React.FC = () => (
     <Form />
     <Transactions />
     <Balance />
+    <ExpenseChart />
   </Container>
 )
