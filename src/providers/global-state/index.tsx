@@ -41,6 +41,8 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
 
   const TOTAL_INCOME_PERCENTAGE = 100 - TOTAL_EXPENSE_PERCENTAGE
 
+  const CONDITIONAL_TOTAL = Boolean(TOTAL || TOTAL_EXPENSE_PERCENTAGE || TOTAL_INCOME_PERCENTAGE)
+
   useEffect(() => {
     localStorage.setItem('transactions', JSON.stringify(transactions))
   }, [ transactions ])
@@ -54,7 +56,8 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
     INCOME,
     EXPENSE,
     TOTAL_INCOME_PERCENTAGE,
-    TOTAL_EXPENSE_PERCENTAGE
+    TOTAL_EXPENSE_PERCENTAGE,
+    CONDITIONAL_TOTAL
   }
 
   return (
