@@ -21,6 +21,7 @@ export interface IGlobalStateModel {
   EXPENSE: number;
   TOTAL_INCOME_PERCENTAGE: number;
   TOTAL_EXPENSE_PERCENTAGE: number;
+  CONDITIONAL_TOTAL: boolean;
 }
 
 export interface ITransaction {
