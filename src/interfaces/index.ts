@@ -19,6 +19,8 @@ export interface IGlobalStateModel {
   TOTAL: number;
   INCOME: number;
   EXPENSE: number;
+  TOTAL_INCOME_PERCENTAGE: number;
+  TOTAL_EXPENSE_PERCENTAGE: number;
 }
 
 export interface ITransaction {
