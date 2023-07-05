@@ -7,7 +7,7 @@ export const ExpenseChart: React.FC = () => {
   return (
     <div className="w-[500px]">
       <VictoryPie
-        colorScale={ [ 'red', 'blue' ] }
+        colorScale={ [ '#9fbb78', '#374b1c' ] }
         data={ [
           {
             x: 'Expenses',
@@ -23,7 +23,7 @@ export const ExpenseChart: React.FC = () => {
         labelComponent={ (
           <VictoryLabel
             angle={ 45 }
-            style={ { fill: 'white' } }
+            style={ { fill: '#1a1f12' } }
           />
         ) }
       />
