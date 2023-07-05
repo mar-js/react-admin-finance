@@ -33,9 +33,15 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
 
   const TOTAL = MOUNTS.reduce(handlerReduce, 0) || 0
 
+  const handlePercentage = (total: number) => Math.round((total / TOTAL) * 100)
+
   const INCOME = MOUNTS.filter(mount => mount > 0).reduce(handlerReduce, 0) || 0
 
+  const TOTAL_INCOME_PERCENTAGE = handlePercentage(INCOME)
+
   const EXPENSE = MOUNTS.filter(mount => mount < 0).reduce(handlerReduce, 0) || 0
+
+  const TOTAL_EXPENSE_PERCENTAGE = handlePercentage(EXPENSE)
 
   useEffect(() => {
     localStorage.setItem('transactions', JSON.stringify(transactions))
@@ -48,7 +54,9 @@ export const GlobalStateProvider: React.FC<PropsWithChildren> = ({ children }) =
     deleteTransaction,
     TOTAL,
     INCOME,
-    EXPENSE
+    EXPENSE,
+    TOTAL_INCOME_PERCENTAGE,
+    TOTAL_EXPENSE_PERCENTAGE
   }
 
   return (
