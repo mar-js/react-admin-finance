@@ -1,3 +1,4 @@
+import { useGlobalState } from 'contexts'
 import {
   Container,
   Header,
@@ -12,17 +13,21 @@ import {
   Transactions
 } from 'UI/components'
 
-export const App: React.FC = () => (
-  <Container>
-    <Header>
-      <Title />
-    </Header>
-    <Navigation>
-      <Flow />
-    </Navigation>
-    <Form />
-    <Transactions />
-    <Balance />
-    <ExpenseChart />
-  </Container>
-)
+export const App: React.FC = () => {
+  const { CONDITIONAL_TOTAL } = useGlobalState()
+
+  return (
+    <Container>
+      <Header>
+        <Title />
+      </Header>
+      <Navigation>
+        <Flow />
+      </Navigation>
+      <Form />
+      <Transactions />
+      <Balance />
+      { CONDITIONAL_TOTAL && <ExpenseChart /> }
+    </Container>
+  )
+}
