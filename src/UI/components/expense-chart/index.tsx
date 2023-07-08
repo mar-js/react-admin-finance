@@ -5,7 +5,7 @@ export const ExpenseChart: React.FC = () => {
   const { TOTAL_EXPENSE_PERCENTAGE, TOTAL_INCOME_PERCENTAGE } = useGlobalState()
 
   return (
-    <div className="w-[500px]">
+    <div className="h-auto">
       <VictoryPie
         colorScale={ [ '#9fbb78', '#374b1c' ] }
         data={ [
