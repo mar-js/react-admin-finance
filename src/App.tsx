@@ -18,16 +18,20 @@ export const App: React.FC = () => {
 
   return (
     <Container>
-      <Header>
-        <Title />
-      </Header>
-      <Navigation>
-        <Flow />
-      </Navigation>
-      <Form />
-      <Transactions />
-      <Balance />
-      { CONDITIONAL_TOTAL && <ExpenseChart /> }
+      <div>
+        <Header>
+          <Title />
+        </Header>
+        <Navigation>
+          <Flow />
+        </Navigation>
+        <Form />
+        <Balance />
+        { CONDITIONAL_TOTAL && <ExpenseChart /> }
+      </div>
+      <div className="pt-[75px]">
+        <Transactions />
+      </div>
     </Container>
   )
 }
